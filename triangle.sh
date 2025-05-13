@@ -1,14 +1,15 @@
-echo "Enter the first side: "
+echo "enter length of side A:"
 read a
-echo "Enter the second side: "
+echo "Enter length of side B:"
 read b
-echo "Enter the third side: "
+echo "Enter length of side C:"
 read c
-
-if (( a + b > c && a + c > b && b + c > a ))
+if [ $a -eq $b ] && [ $b -eq $c ]
 then
-    echo "The numbers $a, $b, and $c can form a triangle."
+echo "The triangle is equilateral"
+elif [ $a -eq $b ] || [ $b -eq $c ] || [ $a -eq $c ]
+then
+echo "The triangle is isosceles"
 else
-    echo "The numbers $a, $b, and $c cannot form a triangle."
+echo "The triangle is scalene"
 fi
-
